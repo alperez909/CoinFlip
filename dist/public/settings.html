@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="bullion management site, rare coins, gold, silver, platinum">
+    <meta name="author" content="CSE134B The Fellowship">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <meta name=viewport content="width=device-width, initial-scale=.8, minimum-scale = .8, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+    <script src="js/all.js"></script>
+    <title>Settings - CoinFlip</title>
+</head>
+
+<body>
+<nav class="settings-nav" style="visibility:visible; display:block">
+    <a href="home.html">
+        <svg class="icon icon-keyboard-arrow-left" style="left:35px">
+            <symbol id="icon-keyboard-arrow-left" viewBox="0 0 1024 1024">
+                <title>keyboard-arrow-left</title>
+                <path class="path1" d="M657.707 696.96l-195.627-195.627 195.627-195.627-60.373-60.373-256 256 256 256z"></path>
+            </symbol>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-keyboard-arrow-left"></use>
+        </svg>
+    </a>
+
+    <div id="settingsLabel">COINFLIP</div>
+    <svg class="icon-account-logout" style="right:35px">
+        <symbol id="icon-account-logout" viewBox="0 0 8 8">
+            <title>logout</title>
+            <path class="path1" d="M3 0v1h4v5h-4v1h5v-7h-5zm-1 2l-2 1.5 2 1.5v-1h4v-1h-4v-1z"></path>
+        </symbol>
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-account-logout"></use>
+    </svg>
+</nav>
+<aside class="settings-aside">
+    <a>
+        <figure class="settings-figure nav-selected" id="settings-figure-profile">
+            <br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                <path d="M4 0c-1.1 0-2 1.12-2 2.5s.9 2.5 2 2.5 2-1.12 2-2.5-.9-2.5-2-2.5zm-2.09 5c-1.06.05-1.91.92-1.91 2v1h8v-1c0-1.08-.84-1.95-1.91-2-.54.61-1.28 1-2.09 1-.81 0-1.55-.39-2.09-1z"></path>
+            </svg>
+            <figcaption>Profile</figcaption>
+        </figure>
+    </a>
+    <a>
+        <figure class="settings-figure" id="settings-figure-password">
+            <br>
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                <path d="M5.5 0c-1.38 0-2.5 1.12-2.5 2.5 0 .16 0 .32.03.47l-3.03 3.03v2h3v-2h2v-1l.03-.03c.15.03.31.03.47.03 1.38 0 2.5-1.12 2.5-2.5s-1.12-2.5-2.5-2.5zm.5 1c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z"></path>
+            </svg>
+            <figcaption>Password</figcaption>
+        </figure>
+    </a>
+    <a>
+        <figure class="settings-figure" id="settings-figure-theme">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8">
+                <path d="M0 0v8h8v-8h-8zm1 1h6v3l-1-1-1 1 2 2v1h-1l-4-4-1 1v-3z"/>
+            </svg>
+            <br>
+            <figcaption>Theme</figcaption>
+        </figure>
+    </a>
+</aside>
+<section class="main-section">
+    <div class="settings-wrapper">
+        <div id="auth-banner"></div>
+        <div class="settings-inner" id="settings-inner-profile">
+            <h1>Edit Profile</h1>
+            <hr>
+            <table class="user-update">
+                <tbody>
+                <tr>
+                    <td class="user-field">Name:</td>
+                    <td>
+                        <input class="user-input" id="user-full-name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-field">Username:</td>
+                    <td>
+                        <input class="user-input" id="user-name"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="user-field">Email:</td>
+                    <td>
+                        <input class="user-input" id="user-email"/>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="settings-inner" id="settings-inner-password" style="display:none;">
+            <h1>Change Password</h1>
+            <hr>
+            <!--<div style="visibility:hidden; height:0">-->
+            <div>
+                <table class="user-update">
+                    <tbody>
+                    <tr>
+                        <td class="user-field">New Password:</td>
+                        <td>
+                            <input type="password" class="user-input" id="user-password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="user-field">Re-type Password:</td>
+                        <td>
+                            <input type="password" class="user-input" id="user-re-password"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <!--<div style="text-align:center; color: yellow">Note: Changing password will cause automatic logout</div>-->
+            </div>
+        </div>
+        <div class="settings-inner" id="settings-inner-theme" style="visibility:hidden; height:0">
+            <h1>Select Theme</h1>
+            <hr>
+            <!--<div style="visibility:hidden; height:0">-->
+            <div class="theme-heading">Choose the theme you would like to be displayed</div>
+            <table class="user-update">
+                <tbody>
+                <tr>
+                    <td>
+                        <input class="settings-radio" id="dark-theme-radio" type="radio" value="Dark">
+                        <span>Dark Theme</span>
+                    </td>
+                    <td>
+                        <input class="settings-radio" id="light-theme-radio" type="radio" value="Light">
+                        <span>Light Theme</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img class="theme-img" src="./assets/darktheme.png" alt="dark_theme">
+                    </td>
+                    <td>
+                        <img class="theme-img" src="./assets/lighttheme.png" alt="light_theme">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-wrapper">
+            <a href="#"><span class="settings-btt" id="settings-update-btt">Update</span></a>
+            <a href="./home.html"><span class="settings-btt" id="cancel-btt">Cancel</span></a>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    // When window is in mobile and no resize has happen display all setting options
+    if ($(window).width() < 999) {
+        $('.settings-inner').attr('style', ' ');
+    }
+
+    $(window).load(function () {
+
+        // Get current theme
+        setRadioButton();
+
+        // Change view on resize
+        var resizer = function () {
+            var winWidth = $(window).width();
+            // Save selected figure before resize
+            var _saveState = $('.nav-selected');
+            var _saveInner = $('#settings-inner-' + _saveState.attr('id').split(" ")[0].split("-")[2]);
+
+            if (winWidth > 999) {
+                $('.settings-inner').attr('style', 'visibility:hidden; height:0');
+                $('#settings-inner-profile').attr('style', ' ');
+                if (_saveState) {
+                    $('.settings-figure').removeClass('nav-selected');
+                    $(_saveState).addClass('nav-selected');
+                    $('.settings-inner').attr('style', 'display:none');
+                    $(_saveInner).attr('style', ' ');
+                } else {
+                    $('.settings-figure').removeClass('nav-selected');
+                    $('#settings-figure-profile').addClass('nav-selected');
+                }
+            } else {
+                $('.settings-inner').attr('style', '');
+            }
+        };
+
+        $(window).resize(resizer);
+
+        // Sidebar
+        $('.settings-figure').click(function () {
+            $('.settings-figure').removeClass('nav-selected');
+            $(this).addClass('nav-selected');
+        });
+
+        $('#settings-figure-profile').click(function () {
+            $('.settings-inner').attr('style', 'display:none');
+            $('#settings-inner-profile').attr('style', ' ');
+        });
+
+        $('#settings-figure-password').click(function () {
+            $('.settings-inner').attr('style', 'display:none');
+            $('#settings-inner-password').attr('style', ' ');
+        });
+
+        $('#settings-figure-theme').click(function () {
+            $('.settings-inner').attr('style', 'display:none');
+            $('#settings-inner-theme').attr('style', ' ');
+        });
+
+        // Radio buttons
+        $('#light-theme-radio').click(function () {
+            switchRadio($('#light-theme-radio')[0], $('#dark-theme-radio')[0]);
+        });
+
+        $('#dark-theme-radio').click(function () {
+            switchRadio($('#dark-theme-radio')[0], $('#light-theme-radio')[0]);
+        });
+
+    });
+</script>
+
+<script>loadFooter();</script>
+<script>initializeParse();</script>
+<script>getUserInfo();</script>
+</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+  "global": {
+    "parseVersion": "1.4.2"
+  },
+  "applications": {
+    "134b": {
+      "applicationId": "voegPLFhf3W3RI7jHxjFTbcKLMES65BurXu6RWXT",
+      "masterKey": "oNdzVSxXUrZBCu25oe2bzgCryxIv8tRra63VTP39"
+    },
+    "_default": {
+      "link": "134b"
+    }
+  }
+}

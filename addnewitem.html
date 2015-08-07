@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="bullion management site, rare coins, gold, silver, platinum">
+    <meta name="author" content="CSE134B The Fellowship">
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <meta name=viewport content="width=device-width, initial-scale=.8, minimum-scale = .8, user-scalable=yes">
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+
+    <!-- build:js js/all.js -->
+    <script src="./js/jquery-1.11.2.min.js"></script>
+    <script src="./js/velocity.min.js"></script>
+    <script src="./js/parse-1.4.2.min.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/parse-stackitem.js"></script>
+    <script src="./js/item_detail.js"></script>
+    <!-- endbuild -->
+
+    <title>New Item - CoinFlip</title>
+</head>
+
+<body>
+<script>
+    loadTopNav();
+</script>
+<script>
+    loadSideNav(1);
+</script>
+<section class="main-section">
+    <section class="coin_wrapper">
+        <div class="mobile-nav">
+            <a href="home.html">
+                <svg class="icon icon-keyboard-arrow-left">
+                    <symbol id="icon-keyboard-arrow-left" viewBox="0 0 1024 1024">
+                        <title>keyboard-arrow-left</title>
+                        <path class="path1" d="M657.707 696.96l-195.627-195.627 195.627-195.627-60.373-60.373-256 256 256 256z"></path>
+                    </symbol>
+                    <use xlink:href="#icon-keyboard-arrow-left"></use>
+                </svg>
+            </a>
+            ADD ITEM
+        </div>
+        <div class="coin_main">
+            <a href="home.html">
+                <div class="breadcrumb">
+                    <svg class="icon icon-play-arrow-rev">
+                        <symbol id="icon-play-arrow" viewBox="0 0 1024 1024">
+                            <title>play-arrow</title>
+                            <path class="path1" d="M682.667 213.333v597.333l-469.333-298.667z"></path>
+                        </symbol>
+                        <use xlink:href="#icon-play-arrow"></use>
+                    </svg>
+                    Add Item
+                </div>
+            </a>
+            <section class="coin_image">
+                <div class="img_box">
+                    <div class="img_circle" id="fileUpload"><a href="#"></a></div>
+                    <input style="width:0px; height:0px; visibility:hidden;" type="file" id="coinPhotoFileUpload" accept='image/*'>
+                </div>
+            </section>
+            <section class="coin_detail">
+                <table>
+                    <tr>
+                        <td>Metal</td>
+                        <td>
+                            <select id="metalValue" onchange="updateAddStackItemLabels(this.value)">
+                                <option value="Gold">Gold</option>
+                                <option value="Silver">Silver</option>
+                                <option value="Platinum">Platinum</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>
+                            <select id="typeValue" onchange="onTypeChange()">
+                                <option selected>Loading...</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Purchase Date</td>
+                        <td>
+                            <input id="purchaseDateValue"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Qty.</td>
+                        <td>
+                            <input id="quantityValue" value="1" onchange="onEditAddStackItemUpdateTotal()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>
+                            <input id="premiumValue" value="47.00" onchange="onEditAddStackItemUpdateTotal()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Unit Price</td>
+                        <td>
+                            <input id="unitPriceValue" value="1250.60" onchange="onEditAddStackItemUpdateTotal()"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="percentLabel">Gold %</td>
+                        <td id="percentValue">0.999</td>
+                    </tr>
+                    <tr>
+                        <td id="weightLabel">Weight/unit (g)</td>
+                        <td id="weightValue">1.244</td>
+                    </tr>
+                    <tr>
+                        <td id="guLabel">Gold g/u</td>
+                        <td id="guValue">1.244</td>
+                    </tr>
+                    <tr>
+                        <td id="oztuLabel">Gold ozt/u</td>
+                        <td id="oztuValue">0.0400</td>
+                    </tr>
+                    <tr>
+                        <td id="totalAuLabel">Total au (ozt)</td>
+                        <td id="totalAuValue">0.0400</td>
+                    </tr>
+                    <tr>
+                        <td id="totalLabel"><strong>TOTAL</strong></td>
+                        <td><strong id="totalValue">1199.10</strong></td>
+                    </tr>
+                </table>
+                <a onclick="saveToMyStack();"><span id="save">Save to My Stack</span></a>
+                <a href="home.html"><span id="cancel">Cancel</span></a>
+            </section>
+        </div>
+    </section>
+</section>
+<div id="newTypeDialog" style="display: none;">
+    <table>
+        <tr>
+            <td class="dialog-attribute">Type Name</td>
+            <td><input class="dialog-textfield" type="text" id="input_typeName"></td>
+        </tr>
+        <tr>
+            <td class="dialog-attribute">Metal %</td>
+            <td><input class="dialog-textfield" type="text" id="input_typePercent"></td>
+        </tr>
+        <tr>
+            <td class="dialog-attribute">Weight/unit (g)</td>
+            <td><input class="dialog-textfield" type="text" id="input_typeWeight"></td>
+        </tr>
+        <tr>
+            <td>
+                <input class="dialog-btt" id="dialog-submit" type="button" value="Submit" onclick="submitNewMetalType()">
+            </td>
+            <td>
+                <input class="dialog-btt" id="dialog-cancel" type="button" value="Cancel" onclick="toggleNewTypeVisibility()">
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>loadFooter();</script>
+<script>initializeParse();</script>
+<script>selectProperMetal();</script>
+<script>loadMetalTypes();</script>
+<script>uploadPic();</script>
+<script>
+    var now = new Date();
+    document.getElementById("purchaseDateValue").setAttribute("value", now.toLocaleDateString("en-US"));
+</script>
+</body>
+
+</html>

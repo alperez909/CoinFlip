@@ -1,0 +1,144 @@
+body {
+    background: #FFFFFF;
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: normal;
+    color: #595959;
+}
+
+nav {
+    box-shadow: none;
+}
+
+nav svg {
+    fill: silver;
+}
+
+aside figure svg {
+    fill: silver;
+}
+
+aside figure {
+    border-bottom: 3px solid white;
+    color: silver;
+}
+
+aside figure figcaption {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+footer {
+    border-top: none;
+}
+
+.settings-btt {
+    border: 1px solid white;
+}
+
+a {
+    color: #777777;
+}
+
+a:visited {
+    color: #777777;
+}
+
+nav a {
+    color: white;
+}
+
+nav a:visited {
+    color: white;
+}
+
+.overview-panel .market-list .market-item-header svg {
+    fill: #777777;;
+}
+
+.overview-panel .total-value {
+    color: white;
+}
+
+.overview-panel .mobile-toggle {
+    border-top: 2px solid white;
+}
+
+.img_box {
+    border: 1px dashed #A5A5A5;
+}
+
+.overview-panel .market-list .market-item-header {
+    border-bottom: 1px solid #777777;
+}
+
+.overview-panel .market-list .market-item-stats table tr:first-child {
+    color: #40818B;
+}
+
+.overview-panel .pos-change {
+    color: #53B534 !important;
+}
+
+.overview-panel .market-list #current-spot:hover {
+    color: #595959;
+}
+
+input {
+    color: #777777;
+    border: 1px solid silver;
+    background-color: #FFFFFF;
+    font-family: "Helvetica Neue", sans-serif;
+
+}
+
+.my_stack table th {
+    border-bottom: 1px solid #777777;
+}
+
+select {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    -ms-appearance: menulist;
+    -o-appearance: menulist;
+    appearance: menulist;
+    background-color: white;
+    border: 1px solid silver;
+    color: #777777;
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+.coin_main .breadcrumb svg {
+    fill: #777777;
+}
+
+.my_stack table caption section .stack_ctrl svg path {
+    fill: #777777;
+}
+
+.my_stack table tbody > tr:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.mobile-nav svg {
+    fill: silver;
+}
+
+#save, #delete {
+    border: 1px solid white;
+}
+
+/*BLUE HIGHLIGHT*/
+.overview-panel .market-list .market-item-header:hover {
+    color: #61BDCB;
+}
+
+.overview-panel .market-list .market-item-header:hover svg {
+    fill: #61BDCB;
+}
+
+.coin_detail tr > td:nth-child(2) {
+    color: #61BDCB;
+}
+
+.dialog-textfield {
+    height: 25px;
+}
